@@ -482,13 +482,13 @@ export default function BigHitsPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="text-sm text-muted-foreground">Profit Total</div>
-                    <div className={`text-2xl font-bold font-mono ${comparisonStats.totalProfit >= 0 ? "text-green-500" : "text-destructive"}`}>
+                    <div className={`text-2xl font-bold font-mono ${comparisonStats.totalProfit >= 0 ? "text-green-500" : "text-red-400"}`}>
                       {formatCurrency(comparisonStats.totalProfit)}
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="text-sm text-muted-foreground">ROI Médio</div>
-                    <div className={`text-2xl font-bold font-mono ${comparisonStats.avgROI >= 0 ? "text-green-500" : "text-destructive"}`}>
+                    <div className={`text-2xl font-bold font-mono ${comparisonStats.avgROI >= 0 ? "text-green-500" : "text-red-400"}`}>
                       {formatPercentage(comparisonStats.avgROI)}
                     </div>
                   </div>
@@ -665,9 +665,6 @@ export default function BigHitsPage() {
           </Card>
           
           <Card>
-            <CardHeader>
-              <CardTitle>Análise de Conclusão</CardTitle>
-            </CardHeader>
             <MensalConclusionAnalysis comparisonStats={comparisonStats} bigHitsROI={bigHitsROI} />
           </Card>
         </TabsContent>

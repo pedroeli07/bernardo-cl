@@ -92,7 +92,7 @@ export function ITMAnalysis({ itmStats }: ITMAnalysisProps) {
           <div className="text-sm font-medium mb-2">Análise de Tendência</div>
           <p className="text-sm text-muted-foreground">
             {itmStats.postBigWins.secondPeriod.itmPercentage > itmStats.postBigWins.firstPeriod.itmPercentage
-              ? 'Melhoria consistente na taxa ITM após grandes vitórias, sugerindo crescimento na consistência e tomada de decisão.'
+              ? 'Sua taxa de ITM tem se mantido consistente ao longo do tempo, demonstrando estabilidade na sua performance em torneios. Isso é um indicador positivo de que você mantém uma abordagem sólida e equilibrada no jogo, mesmo após grandes resultados.'
               : 'Variação na performance ITM após grandes vitórias, indicando potencial impacto na estratégia de jogo ou abordagem de torneios.'}
           </p>
         </div>

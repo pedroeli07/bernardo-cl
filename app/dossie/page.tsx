@@ -16,6 +16,7 @@ import { DossieData } from "@/types/dossie"
 import { DashboardStats } from "@/types/dashboard"
 import dataService from "@/lib/data-service"
 import { ProfitChart } from "@/components/charts/profit-chart"
+import { DossieConclusion } from "@/components/conclusions"
 
 // Loading component for Suspense
 const LoadingState = () => (
@@ -260,37 +261,7 @@ function DossieContent({ data, stats }: { data: DossieData, stats: DashboardStat
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div>
-              <h3 className="text-md font-semibold mb-2">Pontos Fortes</h3>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Excelente desempenho em torneios PSKO (Bounty) com ROI médio superior</li>
-                <li>Resultados consistentes em torneios de alta faixa de buy-in ($500~990)</li>
-                <li>Capacidade comprovada de recuperação após grandes vitórias</li>
-                <li>ITM global de {formatPercentage(data.itmStats.overall.itmPercentage)} mostra boa consistência</li>
-                <li>Alta frequência de chegada em mesas finais ({formatPercentage(data.eliminationPhases.overall.finalTable.percentage)})</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-md font-semibold mb-2">Áreas de Melhoria</h3>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Desempenho abaixo da média em torneios Hyper (Rápidos)</li>
-                <li>Volatilidade significativa em torneios de baixo buy-in ($0~33)</li>
-                <li>Tendência de queda de ROI após períodos de alto volume de jogos</li>
-                <li>Taxa de eliminação precoce de {formatPercentage(data.eliminationPhases.overall.early.percentage)} pode ser reduzida</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-md font-semibold mb-2">Recomendações</h3>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Focar em torneios PSKO na faixa de $130~450 para maximizar o ROI</li>
-                <li>Reduzir a participação em torneios Hyper ou desenvolver estratégias específicas</li>
-                <li>Implementar períodos de descanso após sequências intensas de torneios</li>
-                <li>Considerar aumentar o volume em meses historicamente mais lucrativos</li>
-                <li>Trabalhar estratégias para o início de torneio para reduzir eliminações precoces</li>
-              </ul>
-            </div>
+            <DossieConclusion data={data} />
           </CardContent>
         </Card>
       </div>
