@@ -1,0 +1,3 @@
+# Ignorar a página de ROI medio que está causando o erro de build
+app/roi-medio/
+.next/server/app/roi-medio/ 
