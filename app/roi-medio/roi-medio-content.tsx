@@ -5,7 +5,6 @@ import { RoiChart } from "@/components/charts/roi-chart"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { formatCurrency, formatPercentage } from "@/lib/utils"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Cell } from "recharts"
-import { ChartContainer } from "@/components/ui/chart"
 import { useMemo } from "react"
 import { useStore, CalculatedStats } from "@/lib/store"
 import { DashboardStats } from "@/types/dashboard"
@@ -131,15 +130,7 @@ export function RoiMedioContent({ stats }: RoiMedioContentProps) {
             <CardTitle className="text-lg font-medium">ROI por Tipo de Torneio</CardTitle>
           </CardHeader>
           <CardContent className="h-[300px]">
-            <ChartContainer
-              config={{
-                roi: {
-                  label: "ROI (%)",
-                  color: "hsl(var(--steelers-gold))",
-                },
-              }}
-              className="h-full"
-            >
+            <div className="h-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={roiByTypeData} margin={{ top: 10, right: 30, left: 0, bottom: 30 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.2} vertical={false} />
@@ -174,7 +165,7 @@ export function RoiMedioContent({ stats }: RoiMedioContentProps) {
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
-            </ChartContainer>
+            </div>
             <div className="text-xs text-muted-foreground text-center mt-4">
               ROI médio por categoria de torneio, valores maiores indicam melhor desempenho
             </div>
@@ -186,15 +177,7 @@ export function RoiMedioContent({ stats }: RoiMedioContentProps) {
             <CardTitle className="text-lg font-medium">ROI por Faixa de Buy-in</CardTitle>
           </CardHeader>
           <CardContent className="h-[300px]">
-            <ChartContainer
-              config={{
-                roi: {
-                  label: "ROI (%)",
-                  color: "hsl(var(--steelers-gold))",
-                },
-              }}
-              className="h-full"
-            >
+            <div className="h-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={roiByBuyInData} margin={{ top: 10, right: 30, left: 0, bottom: 30 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.2} vertical={false} />
@@ -235,7 +218,7 @@ export function RoiMedioContent({ stats }: RoiMedioContentProps) {
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
-            </ChartContainer>
+            </div>
             <div className="text-xs text-muted-foreground text-center mt-4">
               ROI médio por faixa de buy-in, mostrando em quais valores há melhor retorno
             </div>
