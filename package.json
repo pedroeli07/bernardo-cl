@@ -47,7 +47,7 @@
     "csv-parse": "latest",
     "date-fns": "latest",
     "embla-carousel-react": "8.5.1",
-    "framer-motion": "latest",
+    "framer-motion": "^12.6.3",
     "fs": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",

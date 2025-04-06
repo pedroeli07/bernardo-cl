@@ -4,7 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { CanvasBackground } from "@/components/ui/canvas-background"
 import { ThreeBackground } from "@/components/ui/three-background"
-import { Header } from "@/components/layout/header"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,8 +25,8 @@ export default function RootLayout({
         <ThreeBackground />
         <CanvasBackground />
         <div className="relative flex min-h-screen flex-col w-full">
-          <Header />
-          <main className="flex-1 pt-20 w-full max-w-full">{children}</main>
+      
+          <main className="flex-1 pt-2 w-full max-w-full">{children}</main>
         </div>
       </body>
     </html>
